@@ -1,83 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Portfolio</title>
-    <style>
-        :root {
-            --bg: #0a0a0c;
-            --accent: #3b82f6;
-            --card: #16161a;
-            --text: #f8fafc;
-            --dim: #94a3b8;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, system-ui, sans-serif;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
-
-        /* Navigation */
-        nav { padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; letter-spacing: -1px; font-size: 1.2rem; }
-        .logo span { color: var(--accent); }
-
-        /* Hero */
-        header { padding: 10vh 0; }
-        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1; margin-bottom: 1.5rem; font-weight: 900; letter-spacing: -3px; }
-        .hero-p { font-size: 1.2rem; color: var(--dim); max-width: 500px; margin-bottom: 2.5rem; }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.2s ease;
-        }
-        .btn:active { transform: scale(0.96); }
-
-        /* Projects */
-        .section-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 2rem; font-weight: 800; }
-        
-        .project-grid { display: grid; gap: 1rem; }
-        .project-card {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
-        }
-        .project-card:hover { border-color: var(--accent); background: #1c1c21; }
-        .project-card h3 { margin-bottom: 0.5rem; font-size: 1.5rem; }
-        .project-card p { color: var(--dim); font-size: 0.95rem; }
-
-        /* Footer */
-        footer { padding: 4rem 0; text-align: center; color: #444; font-size: 0.9rem; }
-
-        /* Decorative Glow */
-        .glow {
-            position: fixed;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: var(--accent);
-            filter: blur(150px);
-            opacity: 0.1;
-            z-index: -1;
-            pointer-events: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divyanshu | Portfolio</title>
+  <style>
+    :root{--bg:#030712;--accent:#6366f1;--card:#111827;--text:#f9fafb;--dim:#9ca3af;--border:rgba(255,255,255,0.08)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    .container{max-width:900px;margin:0 auto;padding:2rem}
+    h1{font-size:2rem;margin-bottom:1rem}
+    .card{background:var(--card);padding:1.25rem;border-radius:12px;border:1px solid var(--border)}
+    .row{display:flex;gap:1rem;flex-wrap:wrap}
+    .col{flex:1;min-width:260px}
+    label{display:block;font-weight:700;margin-bottom:.25rem}
+    input,textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text)}
+    .btn{display:inline-block;padding:.6rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+  </style>
 </head>
+<body>
+  <div class="container">
+    <h1>Contact</h1>
+    <div class="row">
+      <div class="col card">
+        <h3>Contact Details</h3>
+        <p style="color:var(--dim)">I'm available for freelance and full-time opportunities.</p>
+        <p><strong>Email:</strong> <a href="mailto:divyanshu@developer.io" style="color:var(--accent)">divyanshu@developer.io</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+1234567890" style="color:var(--accent)">+1 (234) 567-890</a></p>
+        <p><strong>Location:</strong> Bangalore, India</p>
+      </div>
+      <div class="col card">
+        <h3>Mail Me</h3>
+        <form id="mailForm">
+          <label for="name">Name</label>
+          <input id="name" name="name" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <div style="margin-top:.75rem;display:flex;gap:.5rem">
+            <button class="btn" type="submit">Send Message</button>
+            <a class="btn" href="mailto:divyanshu@developer.io">Email Directly</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    // simple client-side form handler (no backend)
+    document.getElementById('mailForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('This is a static demo — configure a backend or third-party service to send email.');
+    });
+  </script>
+</body>
+</html>
+            <div class="container">
+                <nav>
+                    <div class="logo">DIVYAN<span>SHU</span></div>
+                    <div class="tech-tag" style="border-color: var(--success); color: var(--success);">● Active Contributor</div>
+                </nav>
+
+                <header>
+                    <div class="badges-container">
+                        <span class="badge">Software Developer</span>
+                        <span class="badge badge-os">Open Source Contributor</span>
+                    </div>
+                    <h1>Seamless Solutions.<br><span style="color:var(--accent)">Exceptional</span> Results.</h1>
+                    <p class="hero-p">Passionate about creating seamless web solutions and solving complex problems through code. Actively seeking opportunities to apply modern frameworks to deliver exceptional user results.</p>
+            
+                    <div class="btn-group">
+                        <a href="mailto:divyanshu@developer.io" class="btn">Start a Conversation</a>
+                        <a href="#work" class="btn btn-secondary">Explore Projects</a>
+                    </div>
+                </header>
+
+                <section id="work">
+                    <div class="section-header">
+                        <span class="section-title">Portfolio</span>
+                        <h2 style="font-size: 2.2rem; font-weight: 900;">Creative Engineering</h2>
+                    </div>
+            
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h3>Number Guessing Game</h3>
+                            <p>A logic-driven interactive experience featuring real-time feedback, state management, and custom CSS animations.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">JavaScript ES6</span>
+                                <span class="tech-tag">CSS Keyframes</span>
+                                <span class="tech-tag">DOM API</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Zenith Dash</h3>
+                            <p>A sleek cryptocurrency tracking dashboard visualizing real-time market fluctuations with high-fidelity charts.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">CoinGecko API</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>FocusFlow</h3>
+                            <p>Minimalist productivity tool designed to minimize digital noise, featuring a custom Pomodoro engine and task syncing.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Tailwind</span>
+                                <span class="tech-tag">LocalStorage</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Nexus Core</h3>
+                            <p>High-performance API engine optimized for low-latency response and high concurrency handling.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">Redis</span>
+                                <span class="tech-tag">Docker</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Horizon SaaS</h3>
+                            <p>A multi-tenant architecture built for scale, featuring real-time data synchronization and enterprise-grade security.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <h3>Lumina UI</h3>
+                            <p>An accessible, lightweight component library designed for rapid web prototyping and design consistency.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Framer Motion</span>
+                                <span class="tech-tag">Storybook</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="open-source">
+                    <div class="section-header">
+                        <span class="section-title">Community</span>
+                        <h2 style="font-size: 2.2rem; font-weight: 900;">Giving Back</h2>
+                    </div>
+            
+                    <div class="os-box">
+                        <div class="os-content">
+                            <h3>Open Source Contributor</h3>
+                            <p>I believe in the power of collaborative software. I actively contribute to modern web frameworks and tools, helping improve the ecosystem for developers worldwide.</p>
+                            <div class="tech-stack" style="margin-top: 1.5rem;">
+                                <span class="tech-tag">Pull Requests</span>
+                                <span class="tech-tag">Code Reviews</span>
+                                <span class="tech-tag">Documentation</span>
+                            </div>
+                        </div>
+                        <div style="background: var(--accent); color: white; padding: 2rem; border-radius: 20px; font-weight: 900; font-size: 1.5rem;">
+                            150+ <br><span style="font-size: 0.8rem; font-weight: 500; opacity: 0.8;">Commits Yearly</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills">
+                    <span class="section-title">Stack</span>
+                    <div class="skills-container">
+                        <div class="skill-pill">React.js</div>
+                        <div class="skill-pill">Node.js</div>
+                        <div class="skill-pill">TypeScript</div>
+                        <div class="skill-pill">Next.js</div>
+                        <div class="skill-pill">Tailwind CSS</div>
+                        <div class="skill-pill">PostgreSQL</div>
+                        <div class="skill-pill">AWS</div>
+                        <div class="skill-pill">System Design</div>
+                        <div class="skill-pill">Docker</div>
+                        <div class="skill-pill">Git / GitHub</div>
+                    </div>
+                </section>
+
+                <section id="contact">
+                    <div class="section-header">
+                        <span class="section-title">Contact</span>
+                        <h2 style="font-size: 2.2rem; font-weight: 900;">Let's build something together</h2>
+                    </div>
+
+                    <div style="display:flex;gap:2rem;flex-wrap:wrap;align-items:flex-start;">
+                        <div style="flex:1;min-width:260px;background:var(--card);padding:2rem;border-radius:20px;border:1px solid var(--border);">
+                            <h3 style="margin-bottom:0.5rem;">Contact Details</h3>
+                            <p style="color:var(--dim);margin-bottom:1rem;">I'm available for freelance and full-time opportunities.</p>
+                            <p style="font-weight:700;">Email: <a href="mailto:divyanshu@developer.io" style="color:var(--accent);text-decoration:none;">divyanshu@developer.io</a></p>
+                            <p style="font-weight:700;">Phone: <a href="tel:+1234567890" style="color:var(--accent);text-decoration:none;">+1 (234) 567-890</a></p>
+                            <p style="font-weight:700;">Location: Bangalore, India</p>
+                            <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+                                <a href="https://github.com/Divyanshudevtalla" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border:1px solid var(--border);padding:0.4rem 0.6rem;border-radius:8px;background:transparent;">GitHub</a>
+                                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border:1px solid var(--border);padding:0.4rem 0.6rem;border-radius:8px;background:transparent;">LinkedIn</a>
+                            </div>
+                        </div>
+
+                        <div style="flex:1;min-width:300px;">
+                            <div style="background:var(--card);padding:2rem;border-radius:20px;border:1px solid var(--border);">
+                                <h3 style="margin-bottom:0.5rem;">Mail Me</h3>
+                                <p style="color:var(--dim);margin-bottom:1rem;">Send a quick message and I'll get back to you.</p>
+                                <form id="mailForm">
+                                    <label style="display:block;font-weight:700;margin-bottom:0.4rem;">Name</label>
+                                    <input name="name" required style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid var(--border);margin-bottom:0.75rem;background:transparent;color:var(--text);" />
+                                    <label style="display:block;font-weight:700;margin-bottom:0.4rem;">Email</label>
+                                    <input name="email" type="email" required style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid var(--border);margin-bottom:0.75rem;background:transparent;color:var(--text);" />
+                                    <label style="display:block;font-weight:700;margin-bottom:0.4rem;">Message</label>
+                                    <textarea name="message" required style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid var(--border);margin-bottom:0.75rem;background:transparent;color:var(--text);min-height:120px;"></textarea>
+                                    <div style="display:flex;gap:0.75rem;">
+                                        <button type="submit" class="btn">Send Message</button>
+                                        <a href="mailto:divyanshu@developer.io" class="btn btn-secondary">Email Directly</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <p style="margin-bottom: 1.5rem; color: var(--dim);">Available for freelance &amp; full-time opportunities.</p>
+                    <a href="mailto:divyanshu@developer.io" class="contact-link">Connect with Divyanshu</a>
+                    <p style="margin-top: 4rem; font-size: 0.7rem; color: #444; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">© 2024 Built with Performance in Mind</p>
+                </footer>
+            </div>
+
+            <script>
+                // Scroll Reveal
+                const cards = document.querySelectorAll('.project-card, .os-box');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.05 });
+
+                cards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                    observer.observe(card);
+                });
+            </script>
+        </body>
+        </html>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Zenith Dash</h3>
+                    <p>A sleek cryptocurrency tracking dashboard visualizing real-time market fluctuations with high-fidelity charts.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Chart.js</span>
+                        <span class="tech-tag">CoinGecko API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>FocusFlow</h3>
+                    <p>Minimalist productivity tool designed to minimize digital noise, featuring a custom Pomodoro engine and task syncing.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">LocalStorage</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Nexus Core</h3>
+                    <p>High-performance API engine optimized for low-latency response and high concurrency handling.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Horizon SaaS</h3>
+                    <p>A multi-tenant architecture built for scale, featuring real-time data synchronization and enterprise-grade security.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Lumina UI</h3>
+                    <p>An accessible, lightweight component library designed for rapid web prototyping and design consistency.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Framer Motion</span>
+                        <span class="tech-tag">Storybook</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="open-source">
+            <div class="section-header">
+                <span class="section-title">Community</span>
+                <h2 style="font-size: 2.2rem; font-weight: 900;">Giving Back</h2>
+            </div>
+            
+            <div class="os-box">
+                <div class="os-content">
+                    <h3>Open Source Contributor</h3>
+                    <p>I believe in the power of collaborative software. I actively contribute to modern web frameworks and tools, helping improve the ecosystem for developers worldwide.</p>
+                    <div class="tech-stack" style="margin-top: 1.5rem;">
+                        <span class="tech-tag">Pull Requests</span>
+                        <span class="tech-tag">Code Reviews</span>
+                        <span class="tech-tag">Documentation</span>
+                    </div>
+                </div>
+                <div style="background: var(--accent); color: white; padding: 2rem; border-radius: 20px; font-weight: 900; font-size: 1.5rem;">
+                    150+ <br><span style="font-size: 0.8rem; font-weight: 500; opacity: 0.8;">Commits Yearly</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <span class="section-title">Stack</span>
+            <div class="skills-container">
+                <div class="skill-pill">React.js</div>
+                <div class="skill-pill">Node.js</div>
+                <div class="skill-pill">TypeScript</div>
+                <div class="skill-pill">Next.js</div>
+                <div class="skill-pill">Tailwind CSS</div>
+                <div class="skill-pill">PostgreSQL</div>
+                <div class="skill-pill">AWS</div>
+                <div class="skill-pill">System Design</div>
+                <div class="skill-pill">Docker</div>
+                <div class="skill-pill">Git / GitHub</div>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1.5rem; color: var(--dim);">Available for freelance & full-time opportunities.</p>
+            <a href="mailto:divyanshu@developer.io" class="contact-link">Connect with Divyanshu</a>
+            <p style="margin-top: 4rem; font-size: 0.7rem; color: #444; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">© 2024 Built with Performance in Mind</p>
+        <section id="contact">
+            <div class="section-header">
+                <span class="section-title">Contact</span>
+                <h2 style="font-size: 2.2rem; font-weight: 900;">Let's build something together</h2>
+            </div>
+
+            <div style="display:flex;gap:2rem;flex-wrap:wrap;align-items:flex-start;">
+                <div style="flex:1;min-width:260px;background:var(--card);padding:2rem;border-radius:20px;border:1px solid var(--border);">
+                    <h3 style="margin-bottom:0.5rem;">Contact Details</h3>
+                    <p style="color:var(--dim);margin-bottom:1rem;">I'm available for freelance and full-time opportunities.</p>
+                    <p style="font-weight:700;">Email: <a href="mailto:divyanshu@developer.io" style="color:var(--accent);text-decoration:none;">divyanshu@developer.io</a></p>
+                    <p style="font-weight:700;">Phone: <a href="tel:+1234567890" style="color:var(--accent);text-decoration:none;">+1 (234) 567-890</a></p>
+                    <p style="font-weight:700;">Location: Bangalore, India</p>
+                    <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap;">
+                        <a href="https://github.com/Divyanshudevtalla" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border:1px solid var(--border);padding:0.4rem 0.6rem;border-radius:8px;background:transparent;">GitHub</a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border:1px solid var(--border);padding:0.4rem 0.6rem;border-radius:8px;background:transparent;">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div style="flex:1;min-width:300px;">
+                    <div style="background:var(--card);padding:2rem;border-radius:20px;border:1px solid var(--border);">
+                        <h3 style="margin-bottom:0.5rem;">Mail Me</h3>
+                        <p style="color:var(--dim);margin-bottom:1rem;">Send a quick message and I'll get back to you.</p>
+                        <form id="mailForm">
+                            <label style="display:block;font-weight:700;margin-bottom:0.4rem;">Name</label>
+                            <input name="name" required style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid var(--border);margin-bottom:0.75rem;background:transparent;color:var(--text);" />
+                            <label style="display:block;font-weight:700;margin-bottom:0.4rem;">Email</label>
+                            <input name="email" type="email" required style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid var(--border);margin-bottom:0.75rem;background:transparent;color:var(--text);" />
+                            <label style="display:block;font-weight:700;margin-bottom:0.4rem;">Message</label>
+                            <textarea name="message" required style="width:100%;padding:0.6rem;border-radius:8px;border:1px solid var(--border);margin-bottom:0.75rem;background:transparent;color:var(--text);min-height:120px;"></textarea>
+                            <div style="display:flex;gap:0.75rem;">
+                                <button type="submit" class="btn">Send Message</button>
+                                <a href="mailto:divyanshu@developer.io" class="btn btn-secondary">Email Directly</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p style="margin-bottom: 1.5rem; color: var(--dim);">Available for freelance &amp; full-time opportunities.</p>
+            <a href="mailto:divyanshu@developer.io" class="contact-link">Connect with Divyanshu</a>
+            <p style="margin-top: 4rem; font-size: 0.7rem; color: #444; letter-spacing: 2px; font-weight: 800; text-transform: uppercase;">© 2024 Built with Performance in Mind</p>
+            <section id="contact">
+            const cards = document.querySelectorAll('.project-card, .os-box');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.05 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                observer.observe(card);
+            });
+        </script>
+</body>
+</html>
